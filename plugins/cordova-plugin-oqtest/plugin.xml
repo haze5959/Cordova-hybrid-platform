@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+           id="cordova-plugin-oqtest"
+      version="1.0.6">
+
+    <name>oqtest</name>
+    <description>oq test plugin</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,oqtest</keywords>
+    <repo>https://git-wip-us.apache.org/repos/asf/cordova-plugin-console.git</repo>
+    <issue>https://issues.apache.org/jira/browse/CB/component/12320644</issue>
+
+    <!-- ios -->
+    <platform name="ios">
+
+        <config-file target="config.xml" parent="/*">
+		<feature name="oqtest">
+			<param name="ios-package" value="CDOQtest"/>
+      <param name="onload" value="true" />
+		</feature>
+        </config-file>
+
+        <js-module src="www/oqtest.js" name="oqtest">
+            <clobbers target="cordova.oqtest" />
+        </js-module>
+
+	<header-file src="src/ios/CDOQtest.h" />
+	<source-file src="src/ios/CDOQtest.m" />
+
+    </platform>
+</plugin>
